@@ -1,0 +1,22 @@
+# Imágenes originales sin optimizar (muy pesadas, no van al repositorio)
+assets/images/_originals/
+
+# Paquete del tema (se genera comprimiendo wordpress-theme/evolux-fight-center/)
+evolux-fight-center.zip
+*.zip
+
+# Configuración local de Claude / editores
+.claude/
+.vscode/
+
+# Archivos temporales de prueba
+_cardtest.html
+_chrometmp/
+
+# Dependencias
+node_modules/
+
+# Sistema operativo
+Thumbs.db
+desktop.ini
+.DS_Store

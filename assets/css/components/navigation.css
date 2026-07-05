@@ -1,0 +1,124 @@
+﻿.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 18px;
+  align-items: center;
+  min-height: 66px;
+  padding: 12px clamp(24px, 4.4vw, 58px);
+  background: rgba(0, 3, 7, 0.9);
+  border-bottom: 1px solid rgba(120, 166, 220, 0.12);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 84px;
+  max-height: 84px;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 1.25vw, 24px);
+  font: 900 0.76rem/1 var(--font-body);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.main-nav a {
+  position: relative;
+  opacity: 0.82;
+  white-space: nowrap;
+  transition: color 160ms ease, opacity 160ms ease;
+}
+
+.main-nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: -11px;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: var(--color-primary-light);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 160ms ease;
+}
+
+.main-nav a:hover,
+.main-nav a.is-active {
+  color: var(--color-text);
+  opacity: 1;
+}
+
+.main-nav a:hover::after,
+.main-nav a.is-active::after {
+  transform: scaleX(1);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Iconos de redes sociales (header y contacto) */
+.social-link {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  color: var(--color-text-soft);
+  border: 1px solid var(--color-border-soft);
+  border-radius: 50%;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.social-link:hover {
+  color: var(--color-primary-light);
+  border-color: rgba(66, 164, 255, 0.6);
+  background: rgba(8, 119, 239, 0.1);
+}
+
+.header-social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-social .social-link {
+  width: 34px;
+  height: 34px;
+}
+
+.header-social .social-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin: 2px 0 24px;
+}
+
+.menu-toggle {
+  display: none;
+}
+.menu-toggle:hover {
+  border-color: rgba(66, 164, 255, 0.56);
+}

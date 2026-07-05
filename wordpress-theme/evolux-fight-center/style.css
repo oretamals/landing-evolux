@@ -1,0 +1,79 @@
+/*
+Theme Name: EvoLuX Fight Center
+Theme URI: https://evoluxfc.cl/
+Author: EvoLuX
+Author URI: https://evoluxfc.cl/
+Description: Tema a medida para EvoLuX Fight Center (Boxeo, Kickboxing, Grappling, Wrestling y MMA). Convertido desde el prototipo estatico oficial, fiel al diseno.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: evolux
+*/
+
+/*
+  Los estilos reales del sitio viven en /assets/css/ y se cargan por orden
+  desde functions.php (tokens, base, layout, componentes, paginas, footer,
+  responsive). Este archivo solo contiene la cabecera obligatoria del tema
+  y unos pocos ajustes para el contenido nativo de WordPress (blog).
+*/
+
+.evx-post-content {
+  color: var(--color-text-soft);
+  font: 500 1rem/1.7 var(--font-body);
+}
+
+.evx-post-content h2,
+.evx-post-content h3 {
+  margin: 1.6em 0 0.6em;
+  color: var(--color-text);
+}
+
+.evx-post-content p {
+  margin: 0 0 1.1em;
+}
+
+.evx-post-content a {
+  color: var(--color-primary-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.evx-post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+.evx-post-content ul,
+.evx-post-content ol {
+  margin: 0 0 1.1em 1.2em;
+}
+
+.evx-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.evx-pagination .page-numbers {
+  display: inline-grid;
+  place-items: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  color: var(--color-text-soft);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-xs);
+  background: rgba(3, 7, 12, 0.32);
+}
+
+.evx-pagination .page-numbers.current {
+  color: #fff;
+  border-color: rgba(66, 164, 255, 0.6);
+  background: rgba(8, 119, 239, 0.18);
+}

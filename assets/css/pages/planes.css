@@ -1,0 +1,452 @@
+/* Promo banner (para campanas y descuentos) */
+.promo-banner {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 52px;
+  text-align: center;
+  border-bottom: 1px solid rgba(66, 164, 255, 0.4);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(66, 164, 255, 0.3), transparent 24rem),
+    linear-gradient(180deg, var(--color-primary-dark), var(--color-primary));
+}
+
+.promo-banner[hidden] {
+  display: none;
+}
+
+.promo-banner strong {
+  font: 900 0.86rem/1.2 var(--font-body);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.promo-banner span {
+  color: rgba(255, 255, 255, 0.92);
+  font: 500 0.86rem/1.3 var(--font-body);
+}
+
+.promo-banner a {
+  font: 900 0.78rem/1 var(--font-body);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.promo-close {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.22);
+  border: 0;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.promo-close svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Bloques de la pagina */
+.planes-block {
+  padding-block: calc(var(--space-section) * 0.6) 8px;
+}
+
+/* Tarjetas de precio (planes mensuales e individuales) */
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 720px) {
+  .price-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Slider de planes: deslizable en movil/tablet, grilla en escritorio */
+.plan-slider {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 2px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.plan-slider > .price-card {
+  flex: 0 0 82%;
+  scroll-snap-align: center;
+}
+
+@media (min-width: 620px) {
+  .plan-slider > .price-card {
+    flex-basis: 46%;
+  }
+}
+
+@media (min-width: 960px) {
+  .plan-slider {
+    display: grid;
+    overflow: visible;
+    padding-bottom: 0;
+    scroll-snap-type: none;
+  }
+
+  .plan-slider--4 {
+    grid-template-columns: repeat(4, 1fr);
+    align-items: stretch;
+  }
+
+  .plan-slider > .price-card {
+    flex: initial;
+  }
+}
+
+.price-card {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-sm);
+  background: linear-gradient(160deg, rgba(11, 23, 38, 0.94), rgba(4, 11, 20, 0.94));
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.22);
+}
+
+.price-card--featured {
+  border-color: rgba(66, 164, 255, 0.6);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(8, 119, 239, 0.26), transparent 18rem),
+    linear-gradient(160deg, rgba(11, 23, 38, 0.98), rgba(4, 11, 20, 0.95));
+}
+
+.price-card__tag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 5px 11px;
+  color: #ffffff;
+  background: linear-gradient(180deg, #178cff, #065ec8);
+  border-radius: 999px;
+  font: 900 0.6rem/1 var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-blue);
+}
+
+.price-card__badge {
+  align-self: flex-start;
+  padding: 5px 12px;
+  margin-bottom: 14px;
+  color: var(--color-primary-light);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: rgba(8, 119, 239, 0.1);
+  font: 900 0.72rem/1 var(--font-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.price-card h3 {
+  margin-bottom: 4px;
+  font-size: 1.35rem;
+}
+
+.price-card__freq {
+  margin: 0 0 14px;
+  color: var(--color-text-muted);
+  font: 600 0.82rem/1.3 var(--font-body);
+}
+
+.price-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 16px;
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.price-card__price small {
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.price-card__price.is-quote {
+  font-size: 1.5rem;
+  color: var(--color-primary-light);
+}
+
+.price-card .clean-list {
+  margin-bottom: 22px;
+}
+
+.price-card .button {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Grupo de botones del plan: "Inscribirme y pagar" (WooCommerce) + "Consultar" */
+.plan-cta {
+  display: grid;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.price-card .plan-cta .button,
+.mma-card .plan-cta .button {
+  width: 100%;
+  margin-top: 0;
+}
+
+/* Arma tu plan */
+.builder-card {
+  padding: clamp(26px, 4vw, 48px);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, rgba(7, 17, 29, 0.94), rgba(4, 11, 20, 0.92));
+  box-shadow: var(--shadow-panel);
+}
+
+.builder-groups {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin: 6px 0 20px;
+}
+
+@media (max-width: 700px) {
+  .builder-groups {
+    grid-template-columns: 1fr;
+  }
+}
+
+.builder-group {
+  padding: 18px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-xs);
+  background: rgba(0, 3, 7, 0.34);
+}
+
+.builder-group legend {
+  padding: 0 6px 0 0;
+  margin-bottom: 12px;
+  color: var(--color-primary-light);
+  font: 900 0.74rem/1 var(--font-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.check-option {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 0;
+  color: var(--color-text-soft);
+  font: 600 0.9rem/1.3 var(--font-body);
+  cursor: pointer;
+}
+
+.check-option + .check-option {
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.check-option input {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin: 0;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.builder-fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.builder-fields .full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 620px) {
+  .builder-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+.builder-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* CTA final */
+.cta-band {
+  display: grid;
+  gap: 18px;
+  place-items: center;
+  padding: clamp(34px, 5vw, 60px);
+  margin-bottom: 26px;
+  text-align: center;
+  border: 1px solid rgba(66, 164, 255, 0.4);
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(8, 119, 239, 0.28), transparent 26rem),
+    linear-gradient(160deg, rgba(11, 23, 38, 0.96), rgba(4, 11, 20, 0.95));
+  box-shadow: var(--shadow-panel);
+}
+
+.cta-band p {
+  max-width: 560px;
+  margin: 0;
+  color: var(--color-text-muted);
+  font: 500 1rem/1.6 var(--font-body);
+}
+
+/* Modalidades como navegacion (saltan a cada bloque) */
+.modality-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 720px) {
+  .modality-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modality-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-sm);
+  background: linear-gradient(160deg, rgba(11, 23, 38, 0.9), rgba(4, 11, 20, 0.92));
+  transition: border-color 180ms ease, transform 180ms ease, background 180ms ease;
+}
+
+.modality-link:hover {
+  border-color: rgba(66, 164, 255, 0.6);
+  transform: translateY(-3px);
+}
+
+.modality-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  color: var(--color-primary-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  background: rgba(8, 119, 239, 0.1);
+}
+
+.modality-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.modality-text {
+  display: grid;
+  gap: 2px;
+}
+
+.modality-text strong {
+  font: 900 0.92rem/1.1 var(--font-body);
+  text-transform: uppercase;
+}
+
+.modality-text > span {
+  color: var(--color-text-muted);
+  font: 500 0.78rem/1.3 var(--font-body);
+}
+
+.modality-arrow {
+  margin-left: auto;
+  color: var(--color-primary-light);
+  font-size: 1.15rem;
+}
+
+.modality-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.modality-link:hover .modality-arrow {
+  transform: translateY(2px);
+}
+
+/* Plan MMA: tarjeta especial ancha */
+.mma-card {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr auto;
+  gap: 26px;
+  align-items: center;
+  margin-top: 4px;
+  padding: 26px 28px;
+  border: 1px solid rgba(66, 164, 255, 0.6);
+  border-radius: var(--radius-sm);
+  background:
+    radial-gradient(circle at 6% 0%, rgba(8, 119, 239, 0.3), transparent 24rem),
+    linear-gradient(160deg, rgba(11, 23, 38, 0.98), rgba(4, 11, 20, 0.95));
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.24);
+}
+
+.mma-card__info .price-card__badge {
+  display: inline-block;
+}
+
+.mma-card__info h3 {
+  margin: 12px 0 4px;
+  font-size: 1.5rem;
+}
+
+.mma-card__info .price-card__freq {
+  margin: 0;
+}
+
+.mma-card__info .price-card__price {
+  margin: 8px 0 0;
+}
+
+.mma-card__features {
+  margin: 0;
+}
+
+.mma-card__cta {
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .mma-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

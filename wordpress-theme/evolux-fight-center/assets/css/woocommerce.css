@@ -1,0 +1,288 @@
+/* ==========================================================================
+   WooCommerce - estilos para integrar tienda, ficha, carrito y checkout
+   con el diseno oscuro de EvoluX. Solo se carga si WooCommerce esta activo.
+   ========================================================================== */
+
+/* Contenedor propio de las paginas WooCommerce */
+.woocommerce-shell {
+  padding-block: calc(var(--space-section) * 0.7) var(--space-section);
+}
+
+.woocommerce-shell a {
+  color: var(--color-primary-light);
+}
+
+.woocommerce .woocommerce-breadcrumb {
+  margin-bottom: 22px;
+  color: var(--color-text-muted);
+  font: 600 0.8rem/1.4 var(--font-body);
+}
+
+/* Titulos */
+.woocommerce-products-header__title,
+.woocommerce div.product .product_title {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.woocommerce div.product .product_title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+/* Precio */
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+  color: var(--color-primary-light);
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.woocommerce div.product p.price del {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+.woocommerce div.product p.price ins {
+  text-decoration: none;
+}
+
+/* Botones (igualan a .button.primary del sitio) */
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce .single_add_to_cart_button,
+.woocommerce #place_order {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  color: #ffffff;
+  font: 900 0.74rem/1 var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: var(--radius-xs);
+  background: linear-gradient(180deg, #178cff, #065ec8);
+  box-shadow: var(--shadow-blue);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce .single_add_to_cart_button:hover,
+.woocommerce #place_order:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #2b98ff, #0a68d6);
+}
+
+/* Boton secundario (p. ej. "ver carrito") en version ghost */
+.woocommerce a.button.wc-forward,
+.woocommerce a.added_to_cart {
+  color: var(--color-text);
+  background: rgba(3, 7, 12, 0.52);
+  border: 1px solid rgba(66, 164, 255, 0.65);
+  box-shadow: none;
+}
+
+/* Cantidad */
+.woocommerce .quantity .qty {
+  min-height: 48px;
+  width: 84px;
+  padding: 0 10px;
+  color: var(--color-text);
+  background: rgba(0, 3, 7, 0.42);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-xs);
+}
+
+/* Galeria de imagenes */
+.woocommerce div.product div.images img {
+  border-radius: var(--radius-sm);
+}
+
+/* Resumen del producto */
+.woocommerce div.product .woocommerce-product-details__short-description {
+  color: var(--color-text-soft);
+  font: 500 0.98rem/1.65 var(--font-body);
+}
+
+.woocommerce div.product .product_meta {
+  margin-top: 18px;
+  color: var(--color-text-muted);
+  font: 600 0.8rem/1.5 var(--font-body);
+}
+
+/* Pestanas (Descripcion / Informacion adicional / Valoraciones) */
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+  padding: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs::before {
+  border-bottom-color: var(--color-border-soft);
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+  background: rgba(11, 23, 38, 0.6);
+  border-color: var(--color-border-soft);
+  border-radius: var(--radius-xs) var(--radius-xs) 0 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+  background: var(--color-surface-elevated);
+  border-bottom-color: var(--color-surface-elevated);
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+  color: var(--color-text-soft);
+  font: 900 0.78rem/1 var(--font-body);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.woocommerce-Tabs-panel {
+  color: var(--color-text-soft);
+  font: 500 0.98rem/1.7 var(--font-body);
+}
+
+/* Tarjetas de producto (tienda / relacionados) */
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  padding: 16px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-sm);
+  background: linear-gradient(160deg, rgba(11, 23, 38, 0.94), rgba(4, 11, 20, 0.94));
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+  color: var(--color-text);
+  font: 900 1rem/1.2 var(--font-body);
+}
+
+.woocommerce ul.products li.product .price {
+  color: var(--color-primary-light);
+}
+
+.woocommerce .products .star-rating,
+.woocommerce .star-rating span::before {
+  color: var(--color-primary-light);
+}
+
+/* Campos de formulario (checkout / cuenta / selectores del producto) */
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select,
+.woocommerce .select2-container--default .select2-selection--single {
+  min-height: 48px;
+  padding: 10px 12px;
+  color: var(--color-text);
+  background: rgba(0, 3, 7, 0.42);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-xs);
+}
+
+.woocommerce form .form-row label {
+  color: var(--color-text-soft);
+  font: 600 0.86rem/1.4 var(--font-body);
+}
+
+/* Tablas (carrito, pedido) */
+.woocommerce table.shop_table {
+  border-color: var(--color-border-soft);
+  border-radius: var(--radius-sm);
+}
+
+.woocommerce table.shop_table th,
+.woocommerce table.shop_table td {
+  border-color: var(--color-border-soft);
+  color: var(--color-text-soft);
+}
+
+.woocommerce-cart table.cart img {
+  border-radius: var(--radius-xs);
+}
+
+/* Cajas de totales / resumen */
+.woocommerce .cart_totals,
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-checkout #order_review,
+.woocommerce-checkout #customer_details {
+  padding: 4px 0;
+}
+
+/* Avisos / mensajes */
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error,
+.woocommerce-noreviews {
+  color: var(--color-text-soft);
+  background: rgba(8, 119, 239, 0.1);
+  border-top: 3px solid var(--color-primary);
+  border-radius: var(--radius-xs);
+}
+
+.woocommerce-message::before,
+.woocommerce-info::before {
+  color: var(--color-primary-light);
+}
+
+.woocommerce-error {
+  background: rgba(220, 53, 69, 0.12);
+  border-top-color: #dc3545;
+}
+
+/* Selector de disciplina/horario del plan (se agrega por functions.php) */
+.evx-plan-options {
+  display: grid;
+  gap: 14px;
+  margin: 6px 0 20px;
+  padding: 18px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 3, 7, 0.34);
+}
+
+.evx-plan-options .evx-field {
+  display: grid;
+  gap: 6px;
+}
+
+.evx-plan-options label {
+  color: var(--color-primary-light);
+  font: 900 0.72rem/1 var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.evx-plan-options select {
+  min-height: 48px;
+  padding: 0 12px;
+  color: var(--color-text);
+  background: rgba(0, 3, 7, 0.5);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-xs);
+  font: 600 0.92rem/1.3 var(--font-body);
+}
+
+.evx-plan-options select:disabled {
+  opacity: 0.5;
+}
+
+.evx-plan-options .evx-note {
+  margin: 0;
+  color: var(--color-text-muted);
+  font: 500 0.85rem/1.5 var(--font-body);
+}

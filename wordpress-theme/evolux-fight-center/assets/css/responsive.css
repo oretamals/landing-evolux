@@ -1,0 +1,596 @@
+﻿@media (max-width: 1120px) {
+  .site-header {
+    grid-template-columns: auto 1fr auto;
+    gap: 14px;
+  }
+
+  .main-nav {
+    gap: 10px;
+    font-size: 0.66rem;
+  }
+
+  .header-cta {
+    padding-inline: 12px;
+    font-size: 0.58rem;
+  }
+
+  .reference-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .site-header {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+
+  .brand {
+    justify-self: start;
+  }
+
+  .menu-toggle {
+    justify-self: end;
+  }
+
+  .menu-toggle {
+    display: grid;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-xs);
+  }
+
+  .menu-toggle span {
+    height: 2px;
+    background: var(--color-text);
+  }
+
+  .main-nav,
+  .header-actions,
+  .header-cta {
+    display: none;
+  }
+
+  .main-nav.is-open {
+    position: absolute;
+    top: 100%;
+    right: 22px;
+    left: 22px;
+    display: grid;
+    justify-content: stretch;
+    padding: 12px;
+    background: rgba(0, 3, 7, 0.98);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+
+  .main-nav.is-open a {
+    padding: 16px;
+    border-bottom: 1px solid var(--color-border-soft);
+  }
+
+  .main-nav.is-open a::after {
+    display: none;
+  }
+
+  .section-shell {
+    width: min(100% - 34px, var(--container-width));
+  }
+
+  .hero-reference,
+  .hero-inner {
+    min-height: 640px;
+  }
+
+  .hero-features {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  h1 {
+    font-size: clamp(3.2rem, 10vw, 5.2rem);
+  }
+
+  .club-panel,
+  .class-panel,
+  .sports-club,
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .plans-grid,
+  .blog-grid,
+  .sports-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .reference-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .class-image {
+    order: -1;
+  }
+}
+
+@media (max-width: 620px) {
+  .section-shell {
+    width: min(100% - 24px, var(--container-width));
+  }
+
+  .site-header {
+    min-height: 66px;
+    padding: 10px 14px;
+  }
+
+  .brand-logo {
+    height: 64px;
+    max-height: 64px;
+  }
+
+  .hero-reference,
+  .hero-inner {
+    min-height: 620px;
+  }
+
+  .hero-bg {
+    object-position: 68% center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(90deg, rgba(0, 3, 7, 0.96), rgba(0, 3, 7, 0.72)),
+      linear-gradient(180deg, rgba(0, 3, 7, 0.05), var(--color-background) 100%);
+  }
+
+  h1 {
+    font-size: clamp(2.85rem, 14vw, 4.25rem);
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  .hero-actions,
+  .button {
+    width: 100%;
+  }
+
+  .reference-cards,
+  .mini-features,
+  .sports-media,
+  .lead-form,
+  .site-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .coach-grid,
+  .coach-row {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .coach-grid::-webkit-scrollbar,
+  .coach-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .coach-grid > .coach-card,
+  .coach-row > .coach-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+
+  .reference-cards article {
+    min-height: 245px;
+  }
+
+  .club-copy,
+  .class-copy,
+  .contact-card,
+  .visit-card,
+  .sports-copy,
+  .plan-card {
+    padding: 22px;
+  }
+
+  .lead-form .full,
+  .lead-form button {
+    grid-column: auto;
+  }
+}
+@media (max-width: 860px) {
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  .main-nav.is-open {
+    max-height: calc(100vh - 92px);
+    overflow-y: auto;
+    box-shadow: 0 22px 80px rgba(0, 0, 0, 0.45);
+  }
+}
+
+
+@media (max-width: 860px) {
+  .coach-grid,
+  .coach-row {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .coach-grid::-webkit-scrollbar,
+  .coach-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .coach-grid > .coach-card,
+  .coach-row > .coach-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+}
+
+
+@media (max-width: 860px) {
+  .discipline-grid,
+  .plan-slider,
+  .price-grid {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-top: 6px;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .discipline-grid::-webkit-scrollbar,
+  .plan-slider::-webkit-scrollbar,
+  .price-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .discipline-grid > article,
+  .plan-slider > .price-card,
+  .price-grid > .price-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+}
+
+
+/* Ajustes Home: orden y sliders solicitados */
+@media (max-width: 860px) {
+  .class-image {
+    order: initial;
+  }
+
+  .sports-media {
+    order: -1;
+  }
+
+  .sports-copy {
+    order: 0;
+  }
+
+  .sports-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .coach-grid > .coach-card,
+  .coach-row > .coach-card {
+    aspect-ratio: auto;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .sports-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (min-width: 621px) and (max-width: 860px) {
+  .coach-grid > .coach-card,
+  .coach-row > .coach-card {
+    flex-basis: calc((100% - 14px) / 2);
+  }
+}
+
+
+@media (min-width: 621px) and (max-width: 860px) {
+  .discipline-grid > article {
+    flex-basis: calc((100% - 14px) / 2);
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 620px) {
+  .discipline-grid > article {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+
+@media (max-width: 860px) {
+  .discipline-grid,
+  .plan-slider,
+  .price-grid,
+  .coach-grid,
+  .coach-row {
+    position: relative;
+    margin-top: 28px;
+  }
+
+  .discipline-grid::before,
+  .plan-slider::before,
+  .price-grid::before,
+  .coach-grid::before,
+  .coach-row::before {
+    position: absolute;
+    top: -26px;
+    right: 0;
+    content: "Desliza 92";
+    color: var(--color-primary-light);
+    font: 900 0.68rem/1 var(--font-body);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+}
+
+
+@media (max-width: 860px) {
+  .discipline-grid::before,
+  .plan-slider::before,
+  .price-grid::before,
+  .coach-grid::before,
+  .coach-row::before,
+  .discipline-grid::after,
+  .plan-slider::after,
+  .price-grid::after,
+  .coach-grid::after,
+  .coach-row::after {
+    position: sticky;
+    z-index: 3;
+    top: 50%;
+    display: grid;
+    place-items: center;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    margin-block: auto;
+    color: #ffffff;
+    border: 1px solid rgba(66, 164, 255, 0.72);
+    border-radius: 50%;
+    background: rgba(3, 7, 12, 0.82);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.38);
+    font: 900 1.15rem/1 var(--font-body);
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+
+  .discipline-grid::before,
+  .plan-slider::before,
+  .price-grid::before,
+  .coach-grid::before,
+  .coach-row::before {
+    left: 2px;
+    content: "\2190";
+    margin-right: -48px;
+  }
+
+  .discipline-grid::after,
+  .plan-slider::after,
+  .price-grid::after,
+  .coach-grid::after,
+  .coach-row::after {
+    right: 2px;
+    content: "\2192";
+    margin-left: -48px;
+  }
+}
+
+
+/* Indicador de carrusel: se ve el borde de la siguiente tarjeta */
+@media (max-width: 860px) {
+  .discipline-grid::before,
+  .plan-slider::before,
+  .price-grid::before,
+  .coach-grid::before,
+  .coach-row::before,
+  .discipline-grid::after,
+  .plan-slider::after,
+  .price-grid::after,
+  .coach-grid::after,
+  .coach-row::after {
+    display: none;
+    content: none;
+  }
+
+  .discipline-grid,
+  .plan-slider,
+  .price-grid,
+  .coach-grid,
+  .coach-row {
+    padding-right: 28px;
+  }
+
+  .discipline-grid > article,
+  .plan-slider > .price-card,
+  .price-grid > .price-card,
+  .coach-grid > .coach-card,
+  .coach-row > .coach-card {
+    flex-basis: calc(100% - 28px);
+  }
+}
+
+@media (min-width: 621px) and (max-width: 860px) {
+  .discipline-grid > article,
+  .coach-grid > .coach-card,
+  .coach-row > .coach-card {
+    flex-basis: calc((100% - 42px) / 2);
+  }
+}
+
+
+/* Peek bidireccional: se insinuan tarjeta anterior y siguiente */
+@media (max-width: 860px) {
+  .discipline-grid,
+  .plan-slider,
+  .price-grid,
+  .coach-grid,
+  .coach-row {
+    padding-right: 28px;
+    padding-left: 28px;
+    scroll-padding-inline: 28px;
+  }
+
+  .discipline-grid > article,
+  .plan-slider > .price-card,
+  .price-grid > .price-card,
+  .coach-grid > .coach-card,
+  .coach-row > .coach-card {
+    flex-basis: calc(100% - 56px);
+  }
+}
+
+@media (min-width: 621px) and (max-width: 860px) {
+  .discipline-grid > article,
+  .coach-grid > .coach-card,
+  .coach-row > .coach-card {
+    flex-basis: calc((100% - 70px) / 2);
+  }
+}
+
+
+/* Peek equilibrado para carruseles bidireccionales */
+@media (max-width: 860px) {
+  .discipline-grid,
+  .plan-slider,
+  .price-grid,
+  .coach-grid,
+  .coach-row {
+    --carousel-peek: 24px;
+    --carousel-gap: 14px;
+    gap: var(--carousel-gap);
+    padding-inline: var(--carousel-peek);
+    scroll-padding-inline: var(--carousel-peek);
+  }
+
+  .discipline-grid > article,
+  .plan-slider > .price-card,
+  .price-grid > .price-card,
+  .coach-grid > .coach-card,
+  .coach-row > .coach-card {
+    flex-basis: calc(100% - (var(--carousel-peek) * 2));
+  }
+}
+
+@media (min-width: 621px) and (max-width: 860px) {
+  .discipline-grid > article,
+  .coach-grid > .coach-card,
+  .coach-row > .coach-card {
+    flex-basis: calc((100% - (var(--carousel-peek) * 2) - var(--carousel-gap)) / 2);
+  }
+}
+
+
+/* Correccion final: peek simetrico sin doble descuento */
+@media (max-width: 860px) {
+  .discipline-grid,
+  .plan-slider,
+  .price-grid,
+  .coach-grid,
+  .coach-row {
+    --carousel-peek: 24px;
+    --carousel-gap: 14px;
+    gap: var(--carousel-gap);
+    padding-inline: var(--carousel-peek);
+    scroll-padding-inline: var(--carousel-peek);
+  }
+
+  .discipline-grid > article,
+  .plan-slider > .price-card,
+  .price-grid > .price-card,
+  .coach-grid > .coach-card,
+  .coach-row > .coach-card {
+    flex-basis: 100%;
+    scroll-snap-align: start;
+  }
+}
+
+@media (min-width: 621px) and (max-width: 860px) {
+  .discipline-grid > article,
+  .coach-grid > .coach-card,
+  .coach-row > .coach-card {
+    flex-basis: calc((100% - var(--carousel-gap)) / 2);
+  }
+}
+
+
+/* Slides simples solicitados: horarios y testimonios */
+@media (max-width: 860px) {
+  .week-grid,
+  .testimonial-grid {
+    --carousel-peek: 24px;
+    --carousel-gap: 14px;
+    display: flex;
+    gap: var(--carousel-gap);
+    overflow-x: auto;
+    overflow-y: visible;
+    padding: 6px var(--carousel-peek) 8px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-inline: var(--carousel-peek);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .week-grid::-webkit-scrollbar,
+  .testimonial-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .week-grid > .day-card,
+  .testimonial-grid > .testimonial-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+}
+
+@media (min-width: 621px) and (max-width: 860px) {
+  .week-grid > .day-card,
+  .testimonial-grid > .testimonial-card {
+    flex-basis: calc((100% - var(--carousel-gap)) / 2);
+  }
+}

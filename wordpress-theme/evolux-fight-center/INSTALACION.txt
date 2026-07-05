@@ -1,0 +1,138 @@
+========================================================================
+ EvoLuX Fight Center - Tema de WordPress (v1.0.0)
+ Instalacion en HostGator (cPanel + WordPress)
+========================================================================
+
+Este tema reproduce, fiel al prototipo, el sitio de EvoLuX Fight Center.
+El diseno (CSS) y la interactividad (JS) son exactamente los del prototipo
+original; el contenido del blog se administra con el editor nativo de
+WordPress.
+
+
+------------------------------------------------------------------------
+ 1) SUBIR E INSTALAR EL TEMA
+------------------------------------------------------------------------
+Opcion A - Desde el panel de WordPress (recomendada):
+  1. Entra a tu WordPress:  https://TU-DOMINIO/wp-admin
+  2. Apariencia  ->  Temas  ->  Anadir nuevo  ->  Subir tema
+  3. Elige el archivo  evolux-fight-center.zip  y pulsa "Instalar ahora"
+  4. Pulsa "Activar"
+
+Opcion B - Por cPanel (si el zip supera el limite de subida):
+  1. cPanel  ->  Administrador de archivos
+  2. Ve a:  public_html/wp-content/themes/
+  3. Sube  evolux-fight-center.zip  y usa "Extraer"
+     (debe quedar la carpeta  .../themes/evolux-fight-center/ )
+  4. En WordPress:  Apariencia -> Temas -> Activar "EvoLuX Fight Center"
+
+
+------------------------------------------------------------------------
+ 2) CREAR LAS PAGINAS (IMPORTANTE - los "slugs" deben ser exactos)
+------------------------------------------------------------------------
+El tema asigna la plantilla automaticamente segun el slug de la pagina.
+En  Paginas -> Anadir nueva  crea estas 4 paginas y publica cada una.
+El slug es la parte final de la URL (Enlace permanente):
+
+  Titulo:  Sobre Evolux     Slug:  sobre-evolux
+  Titulo:  Planes           Slug:  planes
+  Titulo:  Blog             Slug:  blog
+  Titulo:  Contacto         Slug:  contacto
+
+No hace falta escribir contenido: cada pagina toma su diseno de la
+plantilla del tema. (Si el slug no coincidiera, edita la pagina, panel
+"Atributos de pagina" -> "Plantilla" y elige la de EvoLuX correspondiente.)
+
+La PORTADA (home) funciona sola: el tema usa front-page.php de forma
+automatica en cuanto se activa, sin configurar nada.
+Si quieres forzarla: Ajustes -> Lectura -> "Tu pagina de inicio muestra"
+-> puedes dejar "Las ultimas entradas"; la portada de EvoLuX igual manda.
+
+
+------------------------------------------------------------------------
+ 3) ENLACES PERMANENTES
+------------------------------------------------------------------------
+Ajustes -> Enlaces permanentes -> elige "Nombre de la entrada" y Guarda.
+(Esto asegura URLs limpias tipo /planes/, /contacto/, etc.)
+
+
+------------------------------------------------------------------------
+ 4) BLOG
+------------------------------------------------------------------------
+La pagina "Blog" lista automaticamente tus entradas (Entradas -> Anadir
+nueva). Mientras no haya entradas, muestra tarjetas de ejemplo.
+Cada entrada usa su imagen destacada y su categoria como etiqueta.
+
+
+------------------------------------------------------------------------
+ 5) LOGO, FAVICON Y AJUSTES
+------------------------------------------------------------------------
+- El logo y el favicon ya vienen incluidos en el tema.
+- Opcional: Apariencia -> Personalizar -> Identidad del sitio, para
+  cambiar el "Icono del sitio" (favicon) desde el panel.
+- Idioma del sitio: Ajustes -> Generales -> Idioma = Espanol (Chile).
+
+
+------------------------------------------------------------------------
+ 6) SEO (opcional)
+------------------------------------------------------------------------
+El tema ya incluye title, meta description y Open Graph por pagina.
+Si instalas Yoast SEO o Rank Math, el tema detecta el plugin y le cede
+esos metadatos automaticamente (no habra duplicados).
+
+
+------------------------------------------------------------------------
+ 7) WOOCOMMERCE - VENDER LOS PLANES (pago unico mensual)
+------------------------------------------------------------------------
+La pagina de Planes ya esta preparada. Cada plan muestra el boton
+"Consultar" (WhatsApp) y, EN CUANTO CREES el producto en WooCommerce,
+aparece ademas el boton "Inscribirme y pagar" (automatico).
+
+La conexion se hace por el SKU del producto. Crea un producto por plan:
+  WooCommerce -> Productos -> Anadir nuevo
+  - Tipo: Producto simple
+  - Marca la casilla "Virtual" (no requiere envio)
+  - Precio: la mensualidad del plan
+  - Pestana "Inventario" -> campo SKU: usa EXACTAMENTE estos codigos:
+
+      Plan S ............ SKU: plan-s .......... $30.000
+      Plan M ............ SKU: plan-m .......... $45.000
+      Plan L ............ SKU: plan-l .......... $60.000
+      Plan XL ........... SKU: plan-xl ......... $79.000
+      Plan MMA .......... SKU: plan-mma ........ $69.000
+      Individual S ...... SKU: individual-s .... $75.000
+      Individual M ...... SKU: individual-m .... $139.000
+      Individual L ...... SKU: individual-l .... $179.000
+
+  Si el SKU coincide, el boton "Inscribirme y pagar" aparece solo y lleva
+  a la ficha del producto para pagar. Si borras el producto, el boton
+  desaparece y queda solo "Consultar". No hay que tocar codigo.
+
+Seleccion de disciplina y horario:
+  En los planes S, M, L e Individual S/M/L, la ficha del producto muestra
+  automaticamente dos menus: "Disciplina" y "Horario preferido" (el horario
+  se filtra segun la disciplina). Son obligatorios y quedan guardados en el
+  pedido y en el email de la compra. El Plan XL (todas las disciplinas) y el
+  Plan MMA (estructura fija) no muestran estos menus.
+  Los estilos de la tienda ya combinan con el diseno oscuro del sitio.
+
+Cobro con MercadoPago:
+  1. Plugins -> Anadir nuevo -> busca "Mercado Pago payments for WooCommerce"
+     (plugin oficial de Mercado Pago). Instalar y activar.
+  2. Conecta tu cuenta de Mercado Pago siguiendo el asistente del plugin.
+  3. Con eso ya cobras pagos unicos. La mensualidad se renueva manualmente
+     (el alumno vuelve a comprar cada mes). Para cobro automatico recurrente
+     haria falta el plugin WooCommerce Subscriptions (de pago).
+
+
+------------------------------------------------------------------------
+ PENDIENTES DE CONTENIDO REAL (los mismos del prototipo)
+------------------------------------------------------------------------
+- URLs reales de Instagram / TikTok / Facebook (hoy: evoluxfightcenter).
+- Correo real para el formulario "Arma tu plan"
+  (archivo assets/js/modules/plan-builder.js -> EVOLUX_EMAIL).
+- Resenas reales de Google (seccion Testimonios).
+- Direccion exacta / mapa (seccion Contacto).
+- Fotos reales de coaches, staff y competidores (hoy iconos).
+- Horario real de Sabado/Domingo (hoy: sin clases/descanso).
+
+========================================================================
